@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Q&A</title>
+  <link rel="stylesheet" href="qa-styles.css">
+</head>
+<body>
+  <header>
+    <h1>Financial Literacy Q&A</h1>
+    <p>Answer the questions to test your knowledge and earn a medal!</p>
+  </header>
+
+  <main id="qa-container">
+    <!-- Question 1 -->
+    <div class="qa-item">
+      <p>1. What is the term for money you owe to a bank or creditor?</p>
+      <input type="text" id="answer-1" placeholder="Type your answer here...">
+      <button onclick="submitAnswer(1, 'debt')">Submit</button>
+      <button class="hint-btn" onclick="showHint(1)">💡</button>
+      <p class="hint" id="hint-1">Hint: It's something you need to repay.</p>
+      <div class="feedback" id="feedback-1"></div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="qa-item">
+      <p>2. What does APR stand for?</p>
+      <input type="text" id="answer-2" placeholder="Type your answer here...">
+      <button onclick="submitAnswer(2, 'annual percentage rate')">Submit</button>
+      <button class="hint-btn" onclick="showHint(2)">💡</button>
+      <p class="hint" id="hint-2">Hint: It's related to interest rates on loans.</p>
+      <div class="feedback" id="feedback-2"></div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="qa-item">
+      <p>3. What is it called when you fail to repay a loan?</p>
+      <input type="text" id="answer-3" placeholder="Type your answer here...">
+      <button onclick="submitAnswer(3, 'default')">Submit</button>
+      <button class="hint-btn" onclick="showHint(3)">💡</button>
+      <p class="hint" id="hint-3">Hint: It's a term that also means "failure."</p>
+      <div class="feedback" id="feedback-3"></div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="qa-item">
+      <p>4. What is the original amount borrowed in a loan called?</p>
+      <input type="text" id="answer-4" placeholder="Type your answer here...">
+      <button onclick="submitAnswer(4, 'principal')">Submit</button>
+      <button class="hint-btn" onclick="showHint(4)">💡</button>
+      <p class="hint" id="hint-4">Hint: It's the base amount, excluding interest.</p>
+      <div class="feedback" id="feedback-4"></div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="qa-item">
+      <p>5. Which document helps you track your income and expenses?</p>
+      <input type="text" id="answer-5" placeholder="Type your answer here...">
+      <button onclick="submitAnswer(5, 'budget')">Submit</button>
+      <button class="hint-btn" onclick="showHint(5)">💡</button>
+      <p class="hint" id="hint-5">Hint: This term is often linked to personal finance planning.</p>
+      <div class="feedback" id="feedback-5"></div>
+    </div>
+
+    <div id="score-board">
+      <p>Total Score: <span id="score">0</span> / 5</p>
+    </div>
+    <button id="finish-btn" onclick="showFinalResults()">Finish Q&A</button>
+
+    <div id="results"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Finance Advisory. Play, Learn, and Grow!</p>
+  </footer>
+
+  <script src="qa-script.js"></script>
+</body>
+</html>

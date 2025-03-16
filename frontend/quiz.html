@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Quiz</title>
+  <link rel="stylesheet" href="quiz-styles.css">
+  <!-- Google Translate API Integration -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,kn,ta,te,ml,mr,gu,pa,or', // Include languages you want
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <style>
+    /* Basic page styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: violet;
+    }
+    
+    #google_translate_element {
+      float: right;
+      margin-top: -5px;
+    }
+
+    #quiz-container {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-item {
+      margin-bottom: 15px;
+    }
+
+    .quiz-item button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      background-color: #1c7fdb;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .quiz-item button:hover {
+      background-color: #59b3f0;
+    }
+
+    #finish-btn {
+      background-color: #0be441;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    #finish-btn:hover {
+      background-color: #f57c00;
+    }
+
+    #score-board {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #f3f3f3;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Financial Literacy Quiz</h1>
+    <p>Test your knowledge and see how well you score!</p>
+
+    <!-- Google Translate Dropdown -->
+    <div id="google_translate_element"></div>
+  </header>
+
+  <main id="quiz-container">
+    <div class="quiz-item">
+      <p>1. What is the primary purpose of a loan?</p>
+      <button onclick="checkAnswer(this, true)">A. To borrow money for specific needs</button>
+      <button onclick="checkAnswer(this, false)">B. To avoid paying taxes</button>
+      <button onclick="checkAnswer(this, false)">C. To earn interest</button>
+      <div class="feedback"></div>
+    </div>
+    <div class="quiz-item">
+      <p>2. What does collateral mean in a loan?</p>
+      <button onclick="checkAnswer(this, true)">A. An asset pledged for security</button>
+      <button onclick="checkAnswer(this, false)">B. A fine for late payments</button>
+      <button onclick="checkAnswer(this, false)">C. A credit score system</button>
+      <div class="feedback"></div>
+    </div>
+    <div class="quiz-item">
+      <p>3. What is a secured loan?</p>
+      <button onclick="checkAnswer(this, true)">A. A loan backed by collateral</button>
+      <button onclick="checkAnswer(this, false)">B. A loan with no interest</button>
+      <button onclick="checkAnswer(this, false)">C. A loan for students</button>
+      <div class="feedback"></div>
+    </div>
+    <div class="quiz-item">
+      <p>4. What does EMI stand for?</p>
+      <button onclick="checkAnswer(this, true)">A. Equated Monthly Installment</button>
+      <button onclick="checkAnswer(this, false)">B. Estimated Monthly Income</button>
+      <button onclick="checkAnswer(this, false)">C. Effective Money Indicator</button>
+    </div>
+
+    <div class="quiz-item">
+      <p>5. Which document helps you track your income and expenses?</p>
+      <button onclick="checkAnswer(this, true)">A. Budget</button>
+      <button onclick="checkAnswer(this, false)">B. Credit Report</button>
+      <button onclick="checkAnswer(this, false)">C. Loan Agreement</button>
+    </div>
+
+    <div class="quiz-item">
+      <p>6. Why is a good credit score important for loans?</p>
+      <button onclick="checkAnswer(this, true)">A. It lowers interest rates</button>
+      <button onclick="checkAnswer(this, false)">B. It reduces tax payments</button>
+      <button onclick="checkAnswer(this, false)">C. It eliminates repayment</button>
+    </div>
+
+    <div class="quiz-item">
+      <p>7. What happens if you default on a loan?</p>
+      <button onclick="checkAnswer(this, true)">A. Your credit score decreases</button>
+      <button onclick="checkAnswer(this, false)">B. Your loan is forgiven</button>
+      <button onclick="checkAnswer(this, false)">C. You get better interest rates</button>
+    </div>
+
+    <div class="quiz-item">
+      <p>8. What is the principal amount in a loan?</p>
+      <button onclick="checkAnswer(this, true)">A. The original amount borrowed</button>
+      <button onclick="checkAnswer(this, false)">B. The total repayment amount</button>
+      <button onclick="checkAnswer(this, false)">C. The interest paid</button>
+    </div>
+
+    <div class="quiz-item">
+      <p>9. What does APR stand for?</p>
+      <button onclick="checkAnswer(this, true)">A. Annual Percentage Rate</button>
+      <button onclick="checkAnswer(this, false)">B. Asset Protection Rate</button>
+      <button onclick="checkAnswer(this, false)">C. Annual Payment Ratio</button>
+    </div>
+
+    <div class="quiz-item">
+      <p>10. Which of these improves your loan eligibility?</p>
+      <button onclick="checkAnswer(this, true)">A. A good credit history</button>
+      <button onclick="checkAnswer(this, false)">B. High social media followers</button>
+      <button onclick="checkAnswer(this, false)">C. Owning a luxury car</button>
+    </div>
+    
+    <div id="score-board">
+      <p>Total Score: <span id="score">0</span> </p>
+    </div>
+    <button id="finish-btn" onclick="showFinalResults()">Finish Quiz</button>
+
+    <div id="results"></div>
+  </main>
+  
+
+
+
+  <footer>
+    <p>&copy; 2025 Finance Advisory. Play, Learn, and Grow!</p>
+  </footer>
+
+  <script src="quiz-script.js"></script>
+</body>
+</html>

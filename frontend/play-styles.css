@@ -1,0 +1,62 @@
+/* play-styles.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1; /* Allows the wrapper to grow and push the footer to the bottom */
+}
+
+header {
+  text-align: center;
+  background:violet;
+  color: white;
+  padding: 1rem;
+}
+
+main {
+  flex: 1;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 45%;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #6da1e6;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4f5ff0;
+}
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
